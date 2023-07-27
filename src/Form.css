@@ -1,0 +1,6 @@
+.input-class {
+  @apply w-2/3 h-10 border-2 bg-transparent text-black p-2 outline-none;
+}
+.input-class::placeholder {
+  @apply text-black;
+}

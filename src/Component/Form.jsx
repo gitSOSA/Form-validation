@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import "../Form.css";
 
 const Form = () => {
   const schema = yup.object().shape({
@@ -37,22 +38,49 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="Full name" {...register("FullName")} />
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="border backdrop-opacity-10 bg-white/30 shadow-md shadow-black/50 w-5/6 md:w-1/2  h-5/6  p-6 flex justify-between items-center flex-col"
+    >
+      <input
+        type="text"
+        placeholder="Full name"
+        {...register("FullName")}
+        className="input-class"
+      />
       <p>{errors.FullName?.message}</p>
-      <input type="text" placeholder="Email" {...register("Email")} />
+      <input
+        type="text"
+        placeholder="Email"
+        {...register("Email")}
+        className="input-class"
+      />
       <p>{errors.Email?.message}</p>
-      <input type="number" placeholder="Age" {...register("Age")} />
+      <input
+        type="number"
+        placeholder="Age"
+        {...register("Age")}
+        className="input-class"
+      />
       <p>{errors.Age?.message}</p>
-      <input type="password" placeholder="Password" {...register("Password")} />
+      <input
+        type="password"
+        placeholder="Password"
+        {...register("Password")}
+        className="input-class"
+      />
       <p>{errors.Password?.message}</p>
       <input
         type="password"
         placeholder="Confirm password"
         {...register("ConfirmPassword")}
+        className="input-class"
       />
       <p>{errors.ConfirmPassword?.message}</p>
-      <input type="submit" />
+      <input
+        type="submit"
+        className="w-1/2 bg-green-800 h-10 cursor-pointer hover:bg-transparent hover:border transition-all"
+      />
     </form>
   );
 };
